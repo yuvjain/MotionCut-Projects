@@ -3,19 +3,15 @@ import string
 
 class UsernameGenerator:
     def __init__(self):
-        # Sample lists - you can expand these
         self.adjectives = ["Happy", "Cool", "Brave", "Clever", "Swift", "Mighty", "Epic"]
         self.nouns = ["Tiger", "Dragon", "Panda", "Eagle", "Wolf", "Phoenix", "Warrior"]
         
     def generate_username(self, include_numbers=True, include_special=True, max_number=999):
-        # Combine random adjective and noun
         username = f"{random.choice(self.adjectives)}{random.choice(self.nouns)}"
         
-        # Add random number if requested
         if include_numbers:
             username += str(random.randint(1, max_number))
             
-        # Add special character if requested
         if include_special:
             special_chars = "!#$%&*"
             username += random.choice(special_chars)
@@ -39,7 +35,6 @@ def main():
     print("=================================")
     
     try:
-        # Get user preferences
         num_usernames = int(input("How many usernames would you like to generate? "))
         include_numbers = input("Include numbers? (y/n): ").lower() == 'y'
         include_special = input("Include special characters? (y/n): ").lower() == 'y'
